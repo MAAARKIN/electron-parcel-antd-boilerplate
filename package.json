@@ -1,8 +1,8 @@
 {
-  "name": "reactron",
-  "productName": "Reactron",
+  "name": "electron-antd",
+  "productName": "electron-antd",
   "version": "0.0.1",
-  "description": "Build Desktop applications with React and Electron",
+  "description": "Build Desktop applications with Electron + Parcel + React + Antd",
   "main": "main.js",
   "scripts": {
     "start": "npm run electron",
@@ -11,10 +11,7 @@
     "parcel-production": "parcel build ./index.html -d app --public-url ./",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "postinstall": "electron-builder install-app-deps",
-    "dev": "concurrently --kill-others \"yarn parcel\" \"yarn electron\"",
-    "develop": "concurrently --kill-others \"yarn parcel\" \"yarn electron\"",
-    "parcel": "parcel ./index.html"
+    "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
     "antd": "^3.3.1",
@@ -29,7 +26,6 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "concurrently": "^3.5.1",
     "devtron": "^1.4.0",
     "electron": "^1.8.4",
     "electron-builder": "^20.2.0",
@@ -39,7 +35,7 @@
     "parcel-bundler": "^1.6.2"
   },
   "build": {
-    "appId": "br.com.maaarkin.reactron",
+    "appId": "br.com.maaarkin.electron-antd",
     "files": [
       "!dist${/*}",
       "!.cache${/*}",
@@ -48,6 +44,6 @@
     ]
   },
   "keywords": [],
-  "author": "Alex Casillas <@alexvcasillas>",
+  "author": "Marcos Filho <@maaarkin>",
   "license": "ISC"
 }
