@@ -8,7 +8,7 @@ class Intro extends React.Component {
             <div className='wrapper'>
                 <h1 className='heading'>Welcome to Electron + Parcel + Antd !!</h1>
                 <span>Build desktop applications with React and Electron.</span>
-                <Button type="primary">Primary</Button>
+                <Button type="primary">Antd Button</Button>
             </div>
         )
     }

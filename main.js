@@ -3,9 +3,7 @@ const path = require('path');
 const { setMainMenu } = require('./app-menu');
 const { startParcelProcess } = require('./parcel');
 
-const { environment } = require('./config');
-
-if (environment === 'DEVELOPMENT') {
+if (!process.env.NODE_ENV) {
   require('electron-debug')({ showDevTools: true });
 }
 
@@ -20,15 +18,14 @@ app.on('ready', async () => {
   // Create the browser main window
   mainWindow = new BrowserWindow({
     show: false,
-    titleBarStyle: "hidden-inset",
+    titleBarStyle: "hidden",
+    resizable: true,
+    frame: true,
     webPreferences: {
       nodeIntegration: false
     }
   });
   if (!process.env.NODE_ENV) {
-    // Start the parcel process to launch the development server
-    // await startParcelProcess();
-
     // Set the load URL to the development server
     mainWindow.loadURL('http://localhost:1234');
   } else {
